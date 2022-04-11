@@ -8,4 +8,4 @@ discord.js v13 Gelişmiş Altyapı
 
 ## Ornek.js lere bakarak komutlar oluşturabilirsiniz.
 
-[Buraya tıklayarak kodlar paylaştığım sunucuya gidebilirsiniz.](https://discord.gg/Pur3RnGua2)
+## [Buraya tıklayarak kodlar paylaştığım sunucuya gidebilirsiniz.](https://discord.gg/Pur3RnGua2)
