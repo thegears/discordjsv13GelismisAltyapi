@@ -117,6 +117,6 @@ client.on("interactionCreate", async int => {
 
 client.on('modalSubmit', async (modal) => {
 
-	client.modalInteractions.get(modal.customId)?.run(client, int);
+	client.modalInteractions.get(modal.customId)?.run(client, modal);
 
 });
