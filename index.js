@@ -11,7 +11,10 @@ const {
 	MessageButton,
 	MessageEmbed,
 	Collection,
-	MessageSelectMenu
+	MessageSelectMenu,
+	Modal,
+	TextInputComponent,
+	showModal
 } = require("discord.js");
 const config = require("./config.json");
 const {
@@ -20,13 +23,6 @@ const {
 const client = new Client({
 	intents: 32767
 });
-const discordModals = require("discord-modals");
-const {
-	Modal,
-	TextInputComponent,
-	showModal
-} = require("discord-modals");
-discordModals(client);
 client.login(config.token);
 client.on("ready", async () => {
 	console.log("Hazır");
@@ -111,12 +107,7 @@ client.on("interactionCreate", async int => {
 	if (int.isCommand()) client.slashInteractions.get(int.commandName)?.run(client, int);
 	else if (int.isContextMenu()) client.contextMenuInteractions.get(int.customId)?.run(client, int);
 	else if (int.isSelectMenu()) client.selectMenuInteractions.get(int.customId)?.run(client, int);
+	else if(int.isModalSubmit()) client.modalInteractions.get(modal.customId)?.run(client, modal);
 	else client.buttonInteractions.get(int.customId)?.run(client, int);
-
-});
-
-client.on('modalSubmit', async (modal) => {
-
-	client.modalInteractions.get(modal.customId)?.run(client, modal);
 
 });
