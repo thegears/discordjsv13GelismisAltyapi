@@ -90,8 +90,8 @@ client.on("ready", async () => {
 
 		await rest.put(
 			Routes.applicationCommands(client.user.id), {
-				body: globalSlashCommands
-			},
+			body: globalSlashCommands
+		},
 		);
 
 		console.log('Global komutlar güncellendi.');
@@ -107,7 +107,8 @@ client.on("interactionCreate", async int => {
 	if (int.isCommand()) client.slashInteractions.get(int.commandName)?.run(client, int);
 	else if (int.isContextMenu()) client.contextMenuInteractions.get(int.customId)?.run(client, int);
 	else if (int.isSelectMenu()) client.selectMenuInteractions.get(int.customId)?.run(client, int);
-	else if(int.isModalSubmit()) client.modalInteractions.get(int.customId)?.run(client, int);
-	else client.buttonInteractions.get(int.customId)?.run(client, int);
+	else if (int.isModalSubmit()) client.modalInteractions.get(int.customId)?.run(client, int);
+	else if (int.isButton()) client.buttonInteractions.get(int.customId)?.run(client, int);
+	else console.log("Unknown interaction: " + int.customId);
 
 });
