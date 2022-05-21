@@ -107,7 +107,7 @@ client.on("interactionCreate", async int => {
 	if (int.isCommand()) client.slashInteractions.get(int.commandName)?.run(client, int);
 	else if (int.isContextMenu()) client.contextMenuInteractions.get(int.customId)?.run(client, int);
 	else if (int.isSelectMenu()) client.selectMenuInteractions.get(int.customId)?.run(client, int);
-	else if(int.isModalSubmit()) client.modalInteractions.get(modal.customId)?.run(client, modal);
+	else if(int.isModalSubmit()) client.modalInteractions.get(int.customId)?.run(client, int);
 	else client.buttonInteractions.get(int.customId)?.run(client, int);
 
 });
