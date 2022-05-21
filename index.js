@@ -109,6 +109,6 @@ client.on("interactionCreate", async int => {
 	else if (int.isSelectMenu()) client.selectMenuInteractions.get(int.customId)?.run(client, int);
 	else if (int.isModalSubmit()) client.modalInteractions.get(int.customId)?.run(client, int);
 	else if (int.isButton()) client.buttonInteractions.get(int.customId)?.run(client, int);
-	else console.log("Unknown interaction: " + int.customId);
+	else console.log("Bilinmeyen interaction: " + int.customId);
 
 });
