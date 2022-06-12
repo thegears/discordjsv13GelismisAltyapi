@@ -1,5 +1,5 @@
 module.exports = {
-	name: "channelDelete",
+	name: "channelCreate",
 	async run(channel) {
 
 	}
